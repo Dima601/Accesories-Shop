@@ -13,6 +13,16 @@ body {
 }
 
 .navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    height: 40px;
+    margin-right: 0.5rem;
+}
+
+.navbar .logo span {
     font-size: 1.5rem;
     font-weight: bold;
 }
@@ -30,12 +40,13 @@ body {
 
 .navbar ul li a {
     text-decoration: none;
-    color: black;
+    color: white;
     padding: 0.5rem 1rem;
     transition: background-color 0.3s;
 }
 
 .navbar ul li a:hover {
+    background-color: #575757;
     border-radius: 5px;
 }
 
@@ -82,4 +93,35 @@ body {
     .navbar .search input {
         width: calc(100% - 1rem);
     }
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer .social-icons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.footer .social-icons a {
+    color: white;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer .social-icons a:hover {
+    color: #ff9800;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
 }
