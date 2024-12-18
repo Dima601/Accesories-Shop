@@ -1,127 +1,200 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+body{
+margin: 0;
+font-family: Arial, sans-serif;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 0.5rem 1rem;
-    color: white;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #333;
+padding: 0.5rem 1rem;
+color: white;
 }
 
 .navbar .logo {
-    display: flex;
-    align-items: center;
+display: flex;
+align-items: center;
 }
 
 .navbar .logo img {
-    height: 40px;
-    margin-right: 0.5rem;
+height: 40px;
+margin-right: 0.5rem;
 }
 
 .navbar .logo span {
-    font-size: 1.5rem;
-    font-weight: bold;
+font-size: 1.5rem;
+font-weight: bold;
 }
 
 .navbar ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
+list-style: none;
+display: flex;
+margin: 0;
+padding: 0;
 }
 
 .navbar ul li {
-    margin: 0 0.5rem;
+margin: 0 0.5rem;
 }
 
 .navbar ul li a {
-    text-decoration: none;
-    color: white;
-    padding: 0.5rem 1rem;
-    transition: background-color 0.3s;
+text-decoration: none;
+color: white;
+padding: 0.5rem 1rem;
+transition: background-color 0.3s;
 }
 
 .navbar ul li a:hover {
-    background-color: #575757;
-    border-radius: 5px;
+background-color: #575757;
+border-radius: 5px;
 }
 
 .navbar .search {
-    margin-left: 1rem;
+margin-left: 1rem;
 }
 
 .navbar .search input {
-    padding: 0.5rem;
-    border: none;
-    border-radius: 5px;
+padding: 0.5rem;
+border: none;
+border-radius: 5px;
+}
+
+.navbar .cart {
+margin-left: 1rem;
+font-size: 1.5rem;
+cursor: pointer;
+color: white;
+display: flex;
+align-items: center;
+}
+
+.navbar .cart i {
+margin-right: 0.3rem;
 }
 
 .menu-toggle {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
+display: none;
+font-size: 1.5rem;
+cursor: pointer;
 }
 
 @media (max-width: 768px) {
-    .navbar ul {
-        display: none;
-        flex-direction: column;
-        background-color: #333;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-    }
+.navbar ul {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+}
 
-    .navbar ul.active {
-        display: flex;
-    }
+.navbar ul.active {
+    display: flex;
+}
 
-    .menu-toggle {
-        display: block;
-    }
+.menu-toggle {
+    display: block;
+}
 
-    .navbar .search {
-        margin-top: 0.5rem;
-        width: 100%;
-    }
+.navbar .search {
+    margin-top: 0.5rem;
+    width: 100%;
+}
 
-    .navbar .search input {
-        width: calc(100% - 1rem);
-    }
+.navbar .search input {
+    width: calc(100% - 1rem);
+}
+}
+
+.cards {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 1rem;
+padding: 1rem;
+}
+
+.card {
+background-color: #f4f4f4;
+border-radius: 10px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+overflow: hidden;
+text-decoration: none;
+color: inherit;
+transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+transform: translateY(-5px);
+box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+width: 100%;
+height: auto;
+}
+
+.card-content {
+padding: 1rem;
+}
+
+.card-content h3 {
+margin: 0 0 0.5rem;
+font-size: 1.25rem;
+}
+
+.card-content p {
+margin: 0;
+color: #555;
+font-size: 0.9rem;
+}
+
+.add-to-cart {
+display: inline-block;
+margin-top: 0.5rem;
+padding: 0.5rem 1rem;
+background-color: #333;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+text-align: center;
+font-size: 0.9rem;
+transition: background-color 0.3s;
+}
+
+.add-to-cart i {
+margin-right: 0.5rem;
 }
 
 .footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
+background-color: #333;
+color: white;
+text-align: center;
+padding: 1rem 0;
+margin-top: 2rem;
 }
 
 .footer .social-icons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 0.5rem;
+display: flex;
+justify-content: center;
+margin-bottom: 0.5rem;
 }
 
 .footer .social-icons a {
-    color: white;
-    margin: 0 0.5rem;
-    font-size: 1.5rem;
-    text-decoration: none;
-    transition: color 0.3s;
+color: white;
+margin: 0 0.5rem;
+font-size: 1.5rem;
+text-decoration: none;
+transition: color 0.3s;
 }
 
 .footer .social-icons a:hover {
-    color: #ff9800;
+color: #ff9800;
 }
 
 .footer p {
-    margin: 0;
-    font-size: 0.9rem;
+margin: 0;
+font-size: 0.9rem;
 }
