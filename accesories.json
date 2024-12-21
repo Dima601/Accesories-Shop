@@ -1,0 +1,88 @@
+{
+    "products": [
+        {
+            "name": "Wireless Headphones",
+            "description": "High-quality wireless headphones with noise cancellation.",
+            "image": "headphone1.jpg",
+            "price": 99.99,
+            "category": "Headphones"
+        },
+        {
+            "name": "Gaming Headset",
+            "description": "Experience immersive sound with this gaming headset.",
+            "image": "headphone2.jpg",
+            "price": 79.99,
+            "category": "Headphones"
+        },
+        {
+            "name": "Bluetooth Earbuds",
+            "description": "Compact and powerful earbuds for music on the go.",
+            "image": "headphone3.jpg",
+            "price": 49.99,
+            "category": "Headphones"
+        },
+        {
+            "name": "Over-Ear Headphones",
+            "description": "Comfortable and rich sound for extended listening sessions.",
+            "image": "headphone4.jpg",
+            "price": 89.99,
+            "category": "Headphones"
+        },
+        {
+            "name": "Portable Speaker",
+            "description": "Compact speaker with crystal-clear sound and Bluetooth connectivity.",
+            "image": "speaker1.jpg",
+            "price": 59.99,
+            "category": "Speakers"
+        },
+        {
+            "name": "Waterproof Speaker",
+            "description": "Durable and waterproof speaker for outdoor adventures.",
+            "image": "speaker2.jpg",
+            "price": 69.99,
+            "category": "Speakers"
+        },
+        {
+            "name": "Smart Speaker",
+            "description": "Voice-controlled speaker with smart home integration.",
+            "image": "speaker3.jpg",
+            "price": 129.99,
+            "category": "Speakers"
+        },
+        {
+            "name": "Bass Boost Speaker",
+            "description": "Powerful bass performance for music enthusiasts.",
+            "image": "speaker4.jpg",
+            "price": 99.99,
+            "category": "Speakers"
+        },
+        {
+            "name": "Silicone Case for iPhone",
+            "description": "Durable and sleek silicone case for iPhone models.",
+            "image": "case1.jpg",
+            "price": 19.99,
+            "category": "Phone Cases"
+        },
+        {
+            "name": "Leather Case for Samsung",
+            "description": "Premium leather case for Samsung Galaxy phones.",
+            "image": "case2.jpg",
+            "price": 29.99,
+            "category": "Phone Cases"
+        },
+        {
+            "name": "Transparent Case for OnePlus",
+            "description": "Crystal clear case to showcase your OnePlus phone design.",
+            "image": "case3.jpg",
+            "price": 15.99,
+            "category": "Phone Cases"
+        },
+        {
+            "name": "Rugged Case for Google Pixel",
+            "description": "Shockproof and rugged case for Google Pixel phones.",
+            "image": "case4.jpg",
+            "price": 25.99,
+            "category": "Phone Cases"
+        }
+    ]
+}
