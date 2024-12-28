@@ -181,33 +181,11 @@ font-size: 0.9rem;
             <i class="fa fa-shopping-cart"></i>
         </div>
     </nav>
+<main>
+    <div class="products-list">
 
-    <div class="cards">
-        <a href="#" class="card">
-            <img src="card-image1.jpg" alt="Card 1">
-            <div class="card-content">
-                <h3>Card Title 1</h3>
-                <p>Card description goes here.</p>
-                <button class="add-to-cart"><i class="fa fa-cart-plus"></i>Add to Cart</button>
-            </div>
-        </a>
-        <a href="#" class="card">
-            <img src="card-image2.jpg" alt="Card 2">
-            <div class="card-content">
-                <h3>Card Title 2</h3>
-                <p>Card description goes here.</p>
-                <button class="add-to-cart"><i class="fa fa-cart-plus"></i>Add to Cart</button>
-            </div>
-        </a>
-        <a href="#" class="card">
-            <img src="card-image3.jpg" alt="Card 3">
-            <div class="card-content">
-                <h3>Card Title 3</h3>
-                <p>Card description goes here.</p>
-                <button class="add-to-cart"><i class="fa fa-cart-plus"></i>Add to Cart</button>
-            </div>
-        </a>
     </div>
+</main>
 
     <footer class="footer">
         <div class="social-icons">
@@ -221,21 +199,48 @@ font-size: 0.9rem;
 
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.navbar ul');
+async function getProducts() {
+    try {
+        let response = await fetch("accesories.json");
+        if (!response.ok) {
+            throw new Error(`HTTP Error: ${response.status}`);
+        }
+        let products = await response.json();
+        return products;
+    } catch (error) {
+        console.error("Помилка завантаження JSON:", error);
+    }
+}
 
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+function card_html(product) {
+    return `
+        <div class="card">
+            <img src="images/${product.image}" alt="${product.name}">
+            <div>
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+                <p>${product.price}</p>
+                <a href="#">Add to Cart</a>
+            </div>
+        </div>
+    `;
+}
 
-        const cartButtons = document.querySelectorAll('.add-to-cart');
-
-        cartButtons.forEach(button => {
-            button.addEventListener('click', (event) => {
-                event.preventDefault();
-                alert('Item added to cart!');
+getProducts().then(function(products) {
+    if (products) {
+        let products_list = document.querySelector(".products-list");
+        if (products_list) {
+            products.forEach(function(product) {
+                products_list.innerHTML += card_html(product);
             });
-        });
+        } else {
+            console.error("Контейнер '.products-list' не знайдено!");
+        }
+    } else {
+        console.error("Продукти не отримано!");
+    }
+});
+
     </script>
 </body>
 </html>

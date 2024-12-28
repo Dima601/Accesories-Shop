@@ -1,88 +1,196 @@
-{
-    "products": [
-        {
+        [{
             "name": "Wireless Headphones",
             "description": "High-quality wireless headphones with noise cancellation.",
             "image": "headphone1.jpg",
-            "price": 99.99,
+            "price": "99.9$",
             "category": "Headphones"
         },
         {
             "name": "Gaming Headset",
             "description": "Experience immersive sound with this gaming headset.",
             "image": "headphone2.jpg",
-            "price": 79.99,
+            "price": "79.99$",
             "category": "Headphones"
         },
         {
             "name": "Bluetooth Earbuds",
             "description": "Compact and powerful earbuds for music on the go.",
             "image": "headphone3.jpg",
-            "price": 49.99,
+            "price": "49.99$",
             "category": "Headphones"
         },
         {
             "name": "Over-Ear Headphones",
             "description": "Comfortable and rich sound for extended listening sessions.",
             "image": "headphone4.jpg",
-            "price": 89.99,
+            "price": "89.99$",
             "category": "Headphones"
         },
         {
             "name": "Portable Speaker",
             "description": "Compact speaker with crystal-clear sound and Bluetooth connectivity.",
             "image": "speaker1.jpg",
-            "price": 59.99,
+            "price": "59.99$",
             "category": "Speakers"
         },
         {
             "name": "Waterproof Speaker",
             "description": "Durable and waterproof speaker for outdoor adventures.",
             "image": "speaker2.jpg",
-            "price": 69.99,
+            "price": "69.99$",
             "category": "Speakers"
         },
         {
             "name": "Smart Speaker",
             "description": "Voice-controlled speaker with smart home integration.",
             "image": "speaker3.jpg",
-            "price": 129.99,
+            "price": "129.99$",
             "category": "Speakers"
         },
         {
             "name": "Bass Boost Speaker",
             "description": "Powerful bass performance for music enthusiasts.",
             "image": "speaker4.jpg",
-            "price": 99.99,
+            "price": "99.99$",
             "category": "Speakers"
         },
         {
             "name": "Silicone Case for iPhone",
             "description": "Durable and sleek silicone case for iPhone models.",
             "image": "case1.jpg",
-            "price": 19.99,
+            "price": "19.99$",
             "category": "Phone Cases"
         },
         {
             "name": "Leather Case for Samsung",
             "description": "Premium leather case for Samsung Galaxy phones.",
             "image": "case2.jpg",
-            "price": 29.99,
+            "price": "29.99$",
             "category": "Phone Cases"
         },
         {
             "name": "Transparent Case for OnePlus",
             "description": "Crystal clear case to showcase your OnePlus phone design.",
             "image": "case3.jpg",
-            "price": 15.99,
+            "price": "15.99$",
             "category": "Phone Cases"
         },
         {
             "name": "Rugged Case for Google Pixel",
             "description": "Shockproof and rugged case for Google Pixel phones.",
             "image": "case4.jpg",
-            "price": 25.99,
+            "price": "25.99$",
             "category": "Phone Cases"
+        },
+        {
+            "name": "Compact Power Bank",
+            "description": "Small and portable power bank with 5000mAh capacity.",
+            "image": "powerbank1.jpg",
+            "price": 19.99,
+            "category": "Power Banks"
+        },
+        {
+            "name": "Fast Charging Power Bank",
+            "description": "Quick charge power bank with 10000mAh capacity.",
+            "image": "powerbank2.jpg",
+            "price": 29.99,
+            "category": "Power Banks"
+        },
+        {
+            "name": "Solar Power Bank",
+            "description": "Eco-friendly power bank with solar charging capabilities.",
+            "image": "powerbank3.jpg",
+            "price": 39.99,
+            "category": "Power Banks"
+        },
+        {
+            "name": "High-Capacity Power Bank",
+            "description": "Massive 20000mAh power bank for extended use.",
+            "image": "powerbank4.jpg",
+            "price": 49.99,
+            "category": "Power Banks"
+        },
+        {
+            "name": "Wacom Intuos Pro",
+            "description": "High-precision pen tablet for professional digital artists.",
+            "image": "stylus1.jpg",
+            "price": 379.99,
+            "category": "Stylus"
+        },
+        {
+            "name": "Apple Pencil (2nd Generation)",
+            "description": "Precision stylus for iPad with advanced features.",
+            "image": "stylus2.jpg",
+            "price": 129.99,
+            "category": "Stylus"
+        },
+        {
+            "name": "Microsoft Surface Pen",
+            "description": "A pen designed for the Microsoft Surface tablet, with high precision.",
+            "image": "stylus3.jpg",
+            "price": 99.99,
+            "category": "Stylus"
+        },
+        {
+            "name": "XP-Pen Deco Mini 7",
+            "description": "Affordable and compact drawing tablet for beginners.",
+            "image": "stylus4.jpg",
+            "price": 49.99,
+            "category": "Stylus"
+        },
+        {   "name": "Fast Charging Wall Charger",
+            "description": "Quick charge wall charger with 18W USB-C output.",
+            "image": "charger1.jpg",
+            "price": 19.99,
+            "category": "Chargers"
+        },
+        {
+            "name": "Wireless Charging Pad",
+            "description": "Qi-certified wireless charging pad for all compatible devices.",
+            "image": "charger2.jpg",
+            "price": 29.99,
+            "category": "Chargers"
+        },
+        {
+            "name": "Car Charger with USB Ports",
+            "description": "Dual USB car charger with fast charging capabilities.",
+            "image": "charger3.jpg",
+            "price": 15.99,
+            "category": "Chargers"
+        },
+        {
+            "name": "Solar Charger",
+            "description": "Eco-friendly solar charger with USB output for mobile devices.",
+            "image": "charger4.jpg",
+            "price": 39.99,
+            "category": "Chargers"
+        },
+        {
+            "name": "USB-C to Lightning Cable",
+            "description": "Fast-charging USB-C to Lightning cable for Apple devices.",
+            "image": "cable1.jpg",
+            "price": 14.99,
+            "category": "Cables"
+        },
+        {
+            "name": "Micro-USB to USB Cable",
+            "description": "Durable micro-USB cable for charging and data transfer.",
+            "image": "cable2.jpg",
+            "price": 9.99,
+            "category": "Cables"
+        },
+        {
+            "name": "USB-C to USB-C Cable",
+            "description": "High-speed USB-C to USB-C cable for fast data transfer.",
+            "image": "cable3.jpg",
+            "price": 12.99,
+            "category": "Cables"
+        },
+        {
+            "name": "3.5mm Audio Cable",
+            "description": "Stereo audio cable for connecting devices with a 3.5mm jack.",
+            "image": "cable4.jpg",
+            "price": 7.99,
+            "category": "Cables"
         }
     ]
-}
