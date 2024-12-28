@@ -86,111 +86,111 @@
             "name": "Compact Power Bank",
             "description": "Small and portable power bank with 5000mAh capacity.",
             "image": "powerbank1.jpg",
-            "price": 19.99,
+            "price": "19.99$",
             "category": "Power Banks"
         },
         {
             "name": "Fast Charging Power Bank",
             "description": "Quick charge power bank with 10000mAh capacity.",
             "image": "powerbank2.jpg",
-            "price": 29.99,
+            "price": "29.99$",
             "category": "Power Banks"
         },
         {
             "name": "Solar Power Bank",
             "description": "Eco-friendly power bank with solar charging capabilities.",
             "image": "powerbank3.jpg",
-            "price": 39.99,
+            "price": "39.99$",
             "category": "Power Banks"
         },
         {
             "name": "High-Capacity Power Bank",
             "description": "Massive 20000mAh power bank for extended use.",
             "image": "powerbank4.jpg",
-            "price": 49.99,
+            "price": "49.99$",
             "category": "Power Banks"
         },
         {
             "name": "Wacom Intuos Pro",
             "description": "High-precision pen tablet for professional digital artists.",
             "image": "stylus1.jpg",
-            "price": 379.99,
+            "price": "379.99$",
             "category": "Stylus"
         },
         {
             "name": "Apple Pencil (2nd Generation)",
             "description": "Precision stylus for iPad with advanced features.",
             "image": "stylus2.jpg",
-            "price": 129.99,
+            "price": "129.99$",
             "category": "Stylus"
         },
         {
             "name": "Microsoft Surface Pen",
             "description": "A pen designed for the Microsoft Surface tablet, with high precision.",
             "image": "stylus3.jpg",
-            "price": 99.99,
+            "price": "99.99$",
             "category": "Stylus"
         },
         {
             "name": "XP-Pen Deco Mini 7",
             "description": "Affordable and compact drawing tablet for beginners.",
             "image": "stylus4.jpg",
-            "price": 49.99,
+            "price": "49.99$",
             "category": "Stylus"
         },
         {   "name": "Fast Charging Wall Charger",
             "description": "Quick charge wall charger with 18W USB-C output.",
             "image": "charger1.jpg",
-            "price": 19.99,
+            "price": "19.99$",
             "category": "Chargers"
         },
         {
             "name": "Wireless Charging Pad",
             "description": "Qi-certified wireless charging pad for all compatible devices.",
             "image": "charger2.jpg",
-            "price": 29.99,
+            "price": "29.99$",
             "category": "Chargers"
         },
         {
             "name": "Car Charger with USB Ports",
             "description": "Dual USB car charger with fast charging capabilities.",
             "image": "charger3.jpg",
-            "price": 15.99,
+            "price": "15.99$",
             "category": "Chargers"
         },
         {
             "name": "Solar Charger",
             "description": "Eco-friendly solar charger with USB output for mobile devices.",
             "image": "charger4.jpg",
-            "price": 39.99,
+            "price": "39.99$",
             "category": "Chargers"
         },
         {
             "name": "USB-C to Lightning Cable",
             "description": "Fast-charging USB-C to Lightning cable for Apple devices.",
             "image": "cable1.jpg",
-            "price": 14.99,
+            "price": "14.99$",
             "category": "Cables"
         },
         {
             "name": "Micro-USB to USB Cable",
             "description": "Durable micro-USB cable for charging and data transfer.",
             "image": "cable2.jpg",
-            "price": 9.99,
+            "price": "9.99$",
             "category": "Cables"
         },
         {
             "name": "USB-C to USB-C Cable",
             "description": "High-speed USB-C to USB-C cable for fast data transfer.",
             "image": "cable3.jpg",
-            "price": 12.99,
+            "price": "12.99$",
             "category": "Cables"
         },
         {
             "name": "3.5mm Audio Cable",
             "description": "Stereo audio cable for connecting devices with a 3.5mm jack.",
             "image": "cable4.jpg",
-            "price": 7.99,
+            "price": "7.99$",
             "category": "Cables"
         }
     ]
