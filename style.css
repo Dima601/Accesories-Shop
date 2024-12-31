@@ -208,3 +208,22 @@ font-size: 0.9rem;
 .card a:hover {
     background-color: #555; /* Трохи світліший колір при наведенні */
 }
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background: #333;
+    color: white;
+}
+.hero .hero-text {
+    max-width: 50%;
+}
+.hero h1 {
+    font-size: 2.5rem;
+}
+.hero img {
+    max-width: 45%;
+    height: auto;
+    border-radius: 10px;
+}

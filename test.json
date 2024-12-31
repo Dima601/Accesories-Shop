@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Phone Case A",
+        "image": "https://via.placeholder.com/150",
+        "price": 15.99,
+        "description": "Durable phone case with shock absorption."
+    },
+    {
+        "id": 2,
+        "name": "Phone Case B",
+        "image": "https://via.placeholder.com/150",
+        "price": 19.99,
+        "description": "Sleek design phone case for a stylish look."
+    },
+    {
+        "id": 3,
+        "name": "Phone Case C",
+        "image": "https://via.placeholder.com/150",
+        "price": 12.99,
+        "description": "Lightweight and affordable phone case."
+    },
+    {
+        "id": 4,
+        "name": "Phone Case D",
+        "image": "https://via.placeholder.com/150",
+        "price": 14.99,
+        "description": "Water-resistant phone case for everyday use."
+    }
+]
+
+  
