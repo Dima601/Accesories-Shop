@@ -165,60 +165,6 @@ color: #ff9800;
 margin: 0;
 font-size: 0.9rem;
 }
-.products-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-.card {
-    margin: 10px 0;      /*Нові стилі*/
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      display: block; /* Всі картки відображаються за замовчуванням */       /* тут закінчуються*/
-}
-      .card img {
-      max-width: 100%;
-      display: block;
-      margin-bottom: 10px;
-      height: auto;
-      border-bottom: 1px solid #ddd;
-      }
-    .card .price {
-      font-weight: bold;
-      margin-top: 5px;
-    }
-    .card .category {
-      font-style: italic;
-      color: gray;
-    }
-    .card .add-to-cart {
-      margin-top: 10px;
-      padding: 5px 10px;
-      background-color: #333;
-      color: white;
-      border: none;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-    .card .add-to-cart:hover {
-      background-color: #218838;
-    }
-    .error {
-      color: red;
-      margin-top: 20px;
-    }
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2rem;
-    background: #333;
-    color: white;
-}
 .hero .hero-text {
     max-width: 50%;
 }
@@ -230,6 +176,84 @@ font-size: 0.9rem;
     height: auto;
     border-radius: 10px;
 }
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    }
+    .card {
+        background-color: #f4f4f4;
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+    .hidden {
+      display: none;
+    }
+    .search-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .card img {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+.card div {
+    padding: 16px;
+}
+.card .name {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+    .card .price {
+      font-weight: bold;
+      margin: 5px 0;
+    }
+    .card .category {
+        margin: 5px 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+    .card .description {
+      flex-grow: 1;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .card .add-to-cart {
+        display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #333; /* Фон #333 */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    }
+    .card .add-to-cart:hover {
+            background-color: #555; /* Трохи світліший колір при наведенні */
+    }
+    .error {
+      color: red;
+      margin-top: 20px;
+    }
 </style>
 <body>
     <header>
@@ -260,7 +284,7 @@ font-size: 0.9rem;
         </section>
     </header>
     <section>
-        <div class="products-list" id="content">
+        <div id="content">
               
     </div>
         <div id="error" class="error">     
@@ -282,14 +306,13 @@ font-size: 0.9rem;
     <script>
     document.addEventListener("DOMContentLoaded", async () => {
       const searchInput = document.getElementById("searchInput");
-      const clearSearch = document.getElementById("clearSearch");
       const contentDiv = document.getElementById("content");
       const errorDiv = document.getElementById("error");
 
       // Завантаження даних із JSON-файлу
       const loadProducts = async () => {
         try {
-          const response = await fetch("test.json"); // Замість products.json використовуйте ваш шлях до файлу
+          const response = await fetch("test.json");
           if (!response.ok) throw new Error(`HTTP помилка: ${response.status}`);
           return await response.json();
         } catch (error) {
@@ -300,7 +323,7 @@ font-size: 0.9rem;
       };
 
       const renderProducts = (products) => {
-        contentDiv.innerHTML = ""; // Очищуємо контейнер
+        contentDiv.innerHTML = "";
         products.forEach(product => {
           const card = document.createElement("div");
           card.className = "card";
@@ -309,11 +332,12 @@ font-size: 0.9rem;
           img.src = product.image;
           img.alt = product.name;
           img.onerror = () => {
-            img.src = "placeholder.jpg"; // Резервне зображення
+            img.src = "placeholder.jpg";
             img.alt = "Зображення недоступне";
           };
 
           const name = document.createElement("div");
+          name.className = "name";
           name.textContent = product.name;
 
           const description = document.createElement("div");
@@ -336,49 +360,37 @@ font-size: 0.9rem;
 
           card.appendChild(img);
           card.appendChild(name);
+          card.appendChild(category);
           card.appendChild(description);
           card.appendChild(price);
-          card.appendChild(category);
           card.appendChild(addToCartButton);
 
           contentDiv.appendChild(card);
         });
       };
 
-      const filterProducts = (query) => {
-        const cards = document.querySelectorAll(".card");
-        let hasVisibleCards = false;
+      const filterProducts = (query, products) => {
+        const filteredProducts = products.filter(product => 
+          product.name.toLowerCase().includes(query) || 
+          product.category.toLowerCase().includes(query)
+        );
 
-        cards.forEach(card => {
-          const name = card.querySelector("div:nth-child(2)").textContent.toLowerCase();
-          const category = card.querySelector(".category").textContent.toLowerCase();
-          if (name.includes(query) || category.includes(query)) {
-            card.classList.remove("hidden");
-            hasVisibleCards = true;
-          } else {
-            card.classList.add("hidden");
-          }
-        });
-
-        if (!hasVisibleCards) {
-          errorDiv.textContent = "Немає товарів, що відповідають пошуку.";
+        if (filteredProducts.length > 0) {
+          renderProducts(filteredProducts);
+          errorDiv.textContent = "";
         } else {
-          errorDiv.textContent = ""; // Очищаємо повідомлення
+          contentDiv.innerHTML = "";
+          errorDiv.textContent = "Немає товарів, що відповідають пошуку.";
         }
       };
 
-      const products = await loadProducts(); // Завантажуємо дані при завантаженні сторінки
+      const products = await loadProducts();
       if (products.length > 0) {
         renderProducts(products);
 
         searchInput.addEventListener("input", () => {
           const query = searchInput.value.toLowerCase().trim();
-          filterProducts(query); // Фільтруємо відображення товарів
-        });
-
-        clearSearch.addEventListener("click", () => {
-          searchInput.value = "";
-          filterProducts("");
+          filterProducts(query, products);
         });
       } else {
         errorDiv.textContent = "Немає доступних товарів для відображення.";

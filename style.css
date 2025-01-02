@@ -142,88 +142,100 @@ color: #ff9800;
 margin: 0;
 font-size: 0.9rem;
 }
-.products-list {
+#content {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-.card {
+    gap: 10px;
+    padding: 10px;
+    }
+    .card {
+        background-color: #f4f4f4;
+    border-radius: 10px;
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 250px;
+    text-decoration: none;
+    color: inherit;
+    width: 300px;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
+    }
+    .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
-
-.card img {
+    .hidden {
+      display: none;
+    }
+    .search-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .card img {
     max-width: 100%;
     height: auto;
     border-bottom: 1px solid #ddd;
 }
-
 .card div {
     padding: 16px;
 }
-
-.card h3 {
+.card .name {
     margin: 10px 0;
     font-size: 1.2rem;
     color: #333;
 }
-
-.card .category {
-    margin: 5px 0;
-    font-size: 0.9rem;
-    color: #333;
-}
-
-.card p {
-    margin: 5px 0;
+    .card .price {
+      font-weight: bold;
+      margin: 5px 0;
+    }
+    .card .category {
+        margin: 5px 0;
     font-size: 0.9rem;
     color: #666;
 }
-
-.card a {
-    display: inline-block;
+    .card .description {
+      flex-grow: 1;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .card .add-to-cart {
+        display: inline-block;
     margin-top: 10px;
     padding: 10px 15px;
     background-color: #333; /* Фон #333 */
     color: #fff;
     text-decoration: none;
     border-radius: 4px;
-    transition: 0.3s;
-}
-
-.card a:hover {
-    background-color: #555; /* Трохи світліший колір при наведенні */
-}
+    transition: background-color 0.3s;
+    }
+    .card .add-to-cart:hover {
+            background-color: #555; /* Трохи світліший колір при наведенні */
+    }
+    .error {
+      color: red;
+      margin-top: 20px;
+    }
 .hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2rem;
-    background: #333;
-    color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background: #333;
+  color: white;
 }
 .hero .hero-text {
-    max-width: 50%;
+  max-width: 50%;
 }
 .hero h1 {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 .hero img {
-    max-width: 45%;
-    height: auto;
-    border-radius: 10px;
+  max-width: 45%;
+  height: auto;
+  border-radius: 10px;
 }

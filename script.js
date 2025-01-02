@@ -1,42 +1,92 @@
-async function getProducts() {
-  try {
-      let response = await fetch("products.json");
-      if (!response.ok) {
-          throw new Error(`HTTP Error: ${response.status}`);
+document.addEventListener("DOMContentLoaded", async () => {
+    const searchInput = document.getElementById("searchInput");
+    const contentDiv = document.getElementById("content");
+    const errorDiv = document.getElementById("error");
+
+    // Завантаження даних із JSON-файлу
+    const loadProducts = async () => {
+      try {
+        const response = await fetch("test.json");
+        if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+        return await response.json();
+      } catch (error) {
+        errorDiv.textContent = `Data loading error: ${error.message}`;
+        console.error("Upload error:", error);
+        return [];
       }
-      let products = await response.json();
-      return products;
-  } catch (error) {
-      console.error("Помилка завантаження JSON:", error);
-  }
-}
+    };
 
-function card_html(product) {
-  return `
-      <div class="card">
-          <img src="images/${product.image}" alt="${product.name}">
-          <div>
-              <h3>${product.name}</h3>
-              <p class="category"><strong>Категорія:</strong> ${product.category}</p>
-              <p>${product.description}</p>
-              <p>${product.price}</p>
-              <a href="#">Add to Cart</a>
-          </div>
-      </div>
-  `;
-}
+    const renderProducts = (products) => {
+      contentDiv.innerHTML = "";
+      products.forEach(product => {
+        const card = document.createElement("div");
+        card.className = "card";
 
-getProducts().then(function(products) {
-  if (products) {
-      let products_list = document.querySelector(".products-list");
-      if (products_list) {
-          products.forEach(function(product) {
-              products_list.innerHTML += card_html(product);
-          });
+        const img = document.createElement("img");
+        img.src = product.image;
+        img.alt = product.name;
+        img.onerror = () => {
+          img.src = "placeholder.jpg";
+          img.alt = "Image unavailable";
+        };
+
+        const name = document.createElement("div");
+        name.className = "name";
+        name.textContent = product.name;
+
+        const description = document.createElement("div");
+        description.textContent = product.description;
+
+        const price = document.createElement("div");
+        price.className = "price";
+        price.textContent = `Price: ${product.price} `;
+
+        const category = document.createElement("div");
+        category.className = "category";
+        category.textContent = `Category: ${product.category}`;
+
+        const addToCartButton = document.createElement("button");
+        addToCartButton.className = "add-to-cart";
+        addToCartButton.textContent = "Add to Cart";
+        addToCartButton.addEventListener("click", () => {
+          alert(`${product.name} Add in cart!`);
+        });
+
+        card.appendChild(img);
+        card.appendChild(name);
+        card.appendChild(description);
+        card.appendChild(price);
+        card.appendChild(category);
+        card.appendChild(addToCartButton);
+
+        contentDiv.appendChild(card);
+      });
+    };
+
+    const filterProducts = (query, products) => {
+      const filteredProducts = products.filter(product => 
+        product.name.toLowerCase().includes(query) || 
+        product.category.toLowerCase().includes(query)
+      );
+
+      if (filteredProducts.length > 0) {
+        renderProducts(filteredProducts);
+        errorDiv.textContent = "";
       } else {
-          console.error("Контейнер '.products-list' не знайдено!");
+        contentDiv.innerHTML = "";
+        errorDiv.textContent = "There are no products matching the search.";
       }
-  } else {
-      console.error("Продукти не отримано!");
-  }
-});
+    };
+
+    const products = await loadProducts();
+    if (products.length > 0) {
+      renderProducts(products);
+
+      searchInput.addEventListener("input", () => {
+        const query = searchInput.value.toLowerCase().trim();
+        filterProducts(query, products);
+      });
+    } else {
+      errorDiv.textContent = "There are no available products to display.";
+    }
+  });
