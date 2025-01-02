@@ -174,63 +174,43 @@ font-size: 0.9rem;
 }
 
 .card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 250px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    margin: 10px 0;      /*Нові стилі*/
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      display: block; /* Всі картки відображаються за замовчуванням */       /* тут закінчуються*/
 }
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-
-.card img {
-    max-width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ddd;
-}
-
-.card div {
-    padding: 16px;
-}
-
-.card h3 {
-    margin: 10px 0;
-    font-size: 1.2rem;
-    color: #333;
-}
-
-.card .category {
-    margin: 5px 0;
-    font-size: 0.9rem;
-    color: #333;
-}
-
-.card p {
-    margin: 5px 0;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.card a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 15px;
-    background-color: #333; /* Фон #333 */
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-.card a:hover {
-    background-color: #555; /* Трохи світліший колір при наведенні */
-}
+      .card img {
+      max-width: 100%;
+      display: block;
+      margin-bottom: 10px;
+      height: auto;
+      border-bottom: 1px solid #ddd;
+      }
+    .card .price {
+      font-weight: bold;
+      margin-top: 5px;
+    }
+    .card .category {
+      font-style: italic;
+      color: gray;
+    }
+    .card .add-to-cart {
+      margin-top: 10px;
+      padding: 5px 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .card .add-to-cart:hover {
+      background-color: #218838;
+    }
+    .error {
+      color: red;
+      margin-top: 20px;
+    }
 .hero {
     display: flex;
     align-items: center;
@@ -250,19 +230,6 @@ font-size: 0.9rem;
     height: auto;
     border-radius: 10px;
 }
-.search-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-.search_btn{
-    background-color: #333;
-    color: #f4f4f4;
-}
-.hidden {
-      display: none;
-    }
 </style>
 <body>
     <header>
@@ -279,7 +246,6 @@ font-size: 0.9rem;
             </ul>
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="Search...">
-                <button class="search_btn" id="searchButton">Search</button>
               </div>
             <div class="cart">
                 <i class="fa fa-shopping-cart"></i>
@@ -294,9 +260,11 @@ font-size: 0.9rem;
         </section>
     </header>
     <section>
-        <div class="products-list">
-
-        </div>
+        <div class="products-list" id="content">
+              
+    </div>
+        <div id="error" class="error">     
+    </div>
     </section>
     <footer class="footer">
         <div class="social-icons">
@@ -314,16 +282,18 @@ font-size: 0.9rem;
     <script>
     document.addEventListener("DOMContentLoaded", async () => {
       const searchInput = document.getElementById("searchInput");
-      const searchButton = document.getElementById("searchButton");
+      const clearSearch = document.getElementById("clearSearch");
       const contentDiv = document.getElementById("content");
+      const errorDiv = document.getElementById("error");
 
       // Завантаження даних із JSON-файлу
       const loadProducts = async () => {
         try {
-          const response = await fetch("accesories.json"); // Замість products.json використовуйте ваш шлях до файлу
-          if (!response.ok) throw new Error("Не вдалося завантажити дані");
+          const response = await fetch("test.json"); // Замість products.json використовуйте ваш шлях до файлу
+          if (!response.ok) throw new Error(`HTTP помилка: ${response.status}`);
           return await response.json();
         } catch (error) {
+          errorDiv.textContent = `Помилка завантаження даних: ${error.message}`;
           console.error("Помилка завантаження:", error);
           return [];
         }
@@ -334,72 +304,86 @@ font-size: 0.9rem;
         products.forEach(product => {
           const card = document.createElement("div");
           card.className = "card";
-          card.textContent = product.name; // Використовуємо назву товару
+
+          const img = document.createElement("img");
+          img.src = product.image;
+          img.alt = product.name;
+          img.onerror = () => {
+            img.src = "placeholder.jpg"; // Резервне зображення
+            img.alt = "Зображення недоступне";
+          };
+
+          const name = document.createElement("div");
+          name.textContent = product.name;
+
+          const description = document.createElement("div");
+          description.textContent = product.description;
+
+          const price = document.createElement("div");
+          price.className = "price";
+          price.textContent = `Ціна: ${product.price} грн`;
+
+          const category = document.createElement("div");
+          category.className = "category";
+          category.textContent = `Категорія: ${product.category}`;
+
+          const addToCartButton = document.createElement("button");
+          addToCartButton.className = "add-to-cart";
+          addToCartButton.textContent = "Add to Cart";
+          addToCartButton.addEventListener("click", () => {
+            alert(`${product.name} додано до кошика!`);
+          });
+
+          card.appendChild(img);
+          card.appendChild(name);
+          card.appendChild(description);
+          card.appendChild(price);
+          card.appendChild(category);
+          card.appendChild(addToCartButton);
+
           contentDiv.appendChild(card);
         });
       };
 
-      const filterProducts = (products, query) => {
-        return products.filter(product => product.name.toLowerCase().includes(query));
+      const filterProducts = (query) => {
+        const cards = document.querySelectorAll(".card");
+        let hasVisibleCards = false;
+
+        cards.forEach(card => {
+          const name = card.querySelector("div:nth-child(2)").textContent.toLowerCase();
+          const category = card.querySelector(".category").textContent.toLowerCase();
+          if (name.includes(query) || category.includes(query)) {
+            card.classList.remove("hidden");
+            hasVisibleCards = true;
+          } else {
+            card.classList.add("hidden");
+          }
+        });
+
+        if (!hasVisibleCards) {
+          errorDiv.textContent = "Немає товарів, що відповідають пошуку.";
+        } else {
+          errorDiv.textContent = ""; // Очищаємо повідомлення
+        }
       };
 
       const products = await loadProducts(); // Завантажуємо дані при завантаженні сторінки
-      renderProducts(products);
+      if (products.length > 0) {
+        renderProducts(products);
 
-      searchButton.addEventListener("click", () => {
-        const query = searchInput.value.toLowerCase().trim();
-        const filteredProducts = filterProducts(products, query);
-        renderProducts(filteredProducts); // Відображаємо відфільтровані товари
-      });
-    });
+        searchInput.addEventListener("input", () => {
+          const query = searchInput.value.toLowerCase().trim();
+          filterProducts(query); // Фільтруємо відображення товарів
+        });
 
-
-
-
-
-/*файли з json*/
-        async function getProducts() {
-  try {
-      let response = await fetch("accesories.json");
-      if (!response.ok) {
-          throw new Error(`HTTP Error: ${response.status}`);
-      }
-      let products = await response.json();
-      return products;
-  } catch (error) {
-      console.error("Помилка завантаження JSON:", error);
-  }
-}
-
-function card_html(product) {
-  return `
-      <div class="card">
-          <img src="images/${product.image}" alt="${product.name}">
-          <div>
-              <h3>${product.name}</h3>
-              <p class="category"><strong>Категорія:</strong> ${product.category}</p>
-              <p>${product.description}</p>
-              <p>${product.price}</p>
-              <a href="#">Add to Cart</a>
-          </div>
-      </div>
-  `;
-}
-
-getProducts().then(function(products) {
-  if (products) {
-      let products_list = document.querySelector(".products-list");
-      if (products_list) {
-          products.forEach(function(product) {
-              products_list.innerHTML += card_html(product);
-          });
+        clearSearch.addEventListener("click", () => {
+          searchInput.value = "";
+          filterProducts("");
+        });
       } else {
-          console.error("Контейнер '.products-list' не знайдено!");
+        errorDiv.textContent = "Немає доступних товарів для відображення.";
       }
-  } else {
-      console.error("Продукти не отримано!");
-  }
-});
+    });
     </script>
 </body>
 </html>

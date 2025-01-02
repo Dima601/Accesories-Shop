@@ -1,6 +1,6 @@
 async function getProducts() {
   try {
-      let response = await fetch("accesories.json");
+      let response = await fetch("products.json");
       if (!response.ok) {
           throw new Error(`HTTP Error: ${response.status}`);
       }
