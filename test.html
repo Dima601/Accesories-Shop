@@ -93,6 +93,8 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             padding: 20px;
+            background-color: #ddd;
+            margin-bottom: 0;
         }
 
         .card {
@@ -161,13 +163,15 @@
 
         .error {
             color: red;
-            margin-top: 20px;
+            background-color: #ddd;
             text-align: center;
         }
-    footer {
+        footer {
             background-color: #333;
             color: #fff;
-            padding: 20px 0;
+            padding: 10px 0;
+            border-top: none;
+            margin-top: 0;
         }
 
         .footer-container {
@@ -230,24 +234,31 @@
             color: #bbb;
         }
         .hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2rem;
-    background: #333;
-    color: white;
-}
-.hero .hero-text {
-    max-width: 50%;
-}
-.hero h1 {
-    font-size: 2.5rem;
-}
-.hero img {
-    max-width: 45%;
-    height: auto;
-    border-radius: 10px;
-}
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 400px;
+            background-image: url('./images/accesories.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+            color: #444;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: #444;
+        }
+        .main {
+            margin: 0;
+        }
+
 </style>
 <body>
     <header>
@@ -270,20 +281,17 @@
             </div>
         </nav>
         <section class="hero">
-            <div class="hero-text">
         <h1>Phone accessories store</h1>
         <p>High quality and affordable prices</p>
-            </div>
-            <img src="images/accesories.jpg" alt="Аксесуари для телефонів">
         </section>
     </header>
-    <section>
+    <main class="main">
         <div id="content">
               
     </div>
         <div id="error" class="error">     
     </div>
-    </section>
+</main>
     <footer>
       <div class="footer-container">
           <div class="footer-column">

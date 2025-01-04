@@ -71,6 +71,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 20px;
+  margin-bottom: 0;
 }
 
 .card {
@@ -139,13 +140,15 @@ body {
 
 .error {
   color: red;
-  margin-top: 20px;
+  background-color: #ddd;
   text-align: center;
 }
 footer {
   background-color: #333;
   color: #fff;
-  padding: 20px 0;
+  padding: 10px 0;
+  border-top: none;
+  margin-top: 0;
 }
 
 .footer-container {
@@ -208,21 +211,28 @@ footer {
   color: #bbb;
 }
 .hero {
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding: 2rem;
-background: #333;
-color: white;
-}
-.hero .hero-text {
-max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  background-image: url('./images/accesories.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
 }
 .hero h1 {
-font-size: 2.5rem;
+  font-size: 3rem;
+  margin: 0;
+  color: #444;
 }
-.hero img {
-max-width: 45%;
-height: auto;
-border-radius: 10px;
+.hero p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #444;
+}
+.main {
+  margin: 0;
+  background-color: #ddd;
 }
