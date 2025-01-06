@@ -1,4 +1,5 @@
 [{
+    "id":"1",
     "name": "Wireless Headphones",
     "description": "High-quality wireless headphones with noise cancellation.",
     "image": "images/headphone1.jpg",
@@ -6,6 +7,7 @@
     "category": "Headphones"
 },
 {
+    "id":"2",
     "name": "Gaming Headset",
     "description": "Experience immersive sound with this gaming headset.",
     "image": "images/headphone2.jpg",
@@ -13,6 +15,7 @@
     "category": "Headphones"
 },
 {
+    "id":"3",
     "name": "Bluetooth Earbuds",
     "description": "Compact and powerful earbuds for music on the go.",
     "image": "images/headphone3.jpg",
@@ -20,6 +23,7 @@
     "category": "Headphones"
 },
 {
+    "id":"4",
     "name": "Over-Ear Headphones",
     "description": "Comfortable and rich sound for extended listening sessions.",
     "image": "images/headphone4.jpg",
@@ -27,6 +31,7 @@
     "category": "Headphones"
 },
 {
+    "id":"5",
     "name": "Portable Speaker",
     "description": "Compact speaker with crystal-clear sound and Bluetooth connectivity.",
     "image": "images/speaker1.jpg",
@@ -34,6 +39,7 @@
     "category": "Speakers"
 },
 {
+    "id":"6",
     "name": "Waterproof Speaker",
     "description": "Durable and waterproof speaker for outdoor adventures.",
     "image": "images/speaker2.jpg",
@@ -41,6 +47,7 @@
     "category": "Speakers"
 },
 {
+    "id":"7",
     "name": "Smart Speaker",
     "description": "Voice-controlled speaker with smart home integration.",
     "image": "images/speaker3.jpg",
@@ -48,6 +55,7 @@
     "category": "Speakers"
 },
 {
+    "id":"8",
     "name": "Bass Boost Speaker",
     "description": "Powerful bass performance for music enthusiasts.",
     "image": "images/speaker4.jpg",
@@ -55,6 +63,7 @@
     "category": "Speakers"
 },
 {
+    "id":"9",
     "name": "Silicone Case for iPhone",
     "description": "Durable and sleek silicone case for iPhone models.",
     "image": "images/case1.jpg",
@@ -62,6 +71,7 @@
     "category": "Phone Cases"
 },
 {
+    "id":"10",
     "name": "Leather Case for Samsung",
     "description": "Premium leather case for Samsung Galaxy phones.",
     "image": "images/case2.jpg",
@@ -69,6 +79,7 @@
     "category": "Phone Cases"
 },
 {
+    "id":"11",
     "name": "Transparent Case for OnePlus",
     "description": "Crystal clear case to showcase your OnePlus phone design.",
     "image": "images/case3.jpg",
@@ -76,6 +87,7 @@
     "category": "Phone Cases"
 },
 {
+    "id":"12",
     "name": "Rugged Case for Google Pixel",
     "description": "Shockproof and rugged case for Google Pixel phones.",
     "image": "images/case4.jpg",
@@ -83,6 +95,7 @@
     "category": "Phone Cases"
 },
 {
+    "id":"13",
     "name": "Compact Power Bank",
     "description": "Small and portable power bank with 5000mAh capacity.",
     "image": "images/powerbank1.jpg",
@@ -90,6 +103,7 @@
     "category": "Power Banks"
 },
 {
+    "id":"14",
     "name": "Fast Charging Power Bank",
     "description": "Quick charge power bank with 10000mAh capacity.",
     "image": "images/powerbank2.jpg",
@@ -97,6 +111,7 @@
     "category": "Power Banks"
 },
 {
+    "id":"15",
     "name": "Solar Power Bank",
     "description": "Eco-friendly power bank with solar charging capabilities.",
     "image": "images/powerbank3.jpg",
@@ -104,6 +119,7 @@
     "category": "Power Banks"
 },
 {
+    "id":"16",
     "name": "High-Capacity Power Bank",
     "description": "Massive 20000mAh power bank for extended use.",
     "image": "images/powerbank4.jpg",
@@ -111,6 +127,7 @@
     "category": "Power Banks"
 },
 {
+    "id":"17",
     "name": "Wacom Intuos Pro",
     "description": "High-precision pen tablet for professional digital artists.",
     "image": "images/stylus1.jpg",
@@ -118,6 +135,7 @@
     "category": "Stylus"
 },
 {
+    "id":"18",
     "name": "Apple Pencil (2nd Generation)",
     "description": "Precision stylus for iPad with advanced features.",
     "image": "images/stylus2.jpg",
@@ -125,6 +143,7 @@
     "category": "Stylus"
 },
 {
+    "id":"19",
     "name": "Microsoft Surface Pen",
     "description": "A pen designed for the Microsoft Surface tablet, with high precision.",
     "image": "images/stylus3.jpg",
@@ -132,19 +151,23 @@
     "category": "Stylus"
 },
 {
+    "id":"20",
     "name": "XP-Pen Deco Mini 7",
     "description": "Affordable and compact drawing tablet for beginners.",
     "image": "images/stylus4.jpg",
     "price": "49.99$",
     "category": "Stylus"
 },
-{   "name": "Fast Charging Wall Charger",
+{
+    "id":"21",
+    "name": "Fast Charging Wall Charger",
     "description": "Quick charge wall charger with 18W USB-C output.",
     "image": "images/charger1.jpg",
     "price": "19.99$",
     "category": "Chargers"
 },
 {
+    "id":"22",
     "name": "Wireless Charging Pad",
     "description": "Qi-certified wireless charging pad for all compatible devices.",
     "image": "images/charger2.jpg",
@@ -152,6 +175,7 @@
     "category": "Chargers"
 },
 {
+    "id":"23",
     "name": "Car Charger with USB Ports",
     "description": "Dual USB car charger with fast charging capabilities.",
     "image": "images/charger3.jpg",
@@ -159,6 +183,7 @@
     "category": "Chargers"
 },
 {
+    "id":"24",
     "name": "Solar Charger",
     "description": "Eco-friendly solar charger with USB output for mobile devices.",
     "image": "images/charger4.jpg",
@@ -166,6 +191,7 @@
     "category": "Chargers"
 },
 {
+    "id":"25",
     "name": "USB-C to Lightning Cable",
     "description": "Fast-charging USB-C to Lightning cable for Apple devices.",
     "image": "images/cable1.jpg",
@@ -173,6 +199,7 @@
     "category": "Cables"
 },
 {
+    "id":"26",
     "name": "Micro-USB to USB Cable",
     "description": "Durable micro-USB cable for charging and data transfer.",
     "image": "images/cable2.jpg",
@@ -180,6 +207,7 @@
     "category": "Cables"
 },
 {
+    "id":"27",
     "name": "USB-C to USB-C Cable",
     "description": "High-speed USB-C to USB-C cable for fast data transfer.",
     "image": "images/cable3.jpg",
@@ -187,6 +215,7 @@
     "category": "Cables"
 },
 {
+    "id":"28",
     "name": "3.5mm Audio Cable",
     "description": "Stereo audio cable for connecting devices with a 3.5mm jack.",
     "image": "images/cable4.jpg",
