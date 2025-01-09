@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Завантаження даних із JSON-файлу
     const loadProducts = async () => {
       try {
-        const response = await fetch("products.json");
+        const response = await fetch("test.json");
         if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
         return await response.json();
       } catch (error) {

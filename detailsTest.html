@@ -6,128 +6,103 @@
     <title>Document</title>
 </head>
 <style>
-        body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-    }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
 
-    .container {
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 20px;
-      background: #fff;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-    }
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
 
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
+h1 {
+  text-align: center;
+  color: #333;
+}
 
-    h1 {
-      font-size: 2em;
-      color: #222;
-    }
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-    p {
-      margin: 10px 0;
-    }
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
-    .price {
-      font-size: 1.2em;
-      font-weight: bold;
-      color: #e63946;
-    }
+.details p {
+  margin: 0;
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+}
 
-    .category {
-      font-style: italic;
-      color: #6c757d;
-    }
-
-    #error {
-      color: red;
-      font-weight: bold;
-      text-align: center;
-    }
+.price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e63946;
+}
 </style>
 <body>
-    <div class="container">
-        <div id="error"></div>
-        <div id="details"></div>
-      </div>
+  <div id="product-details" class="container"></div>
 </body>
 <script>
-    document.addEventListener("DOMContentLoaded", async () => {
+const getQueryParam = (param) => {
   const urlParams = new URLSearchParams(window.location.search);
-  const productId = urlParams.get("id");
-  const detailsDiv = document.getElementById("details");
-  const errorDiv = document.getElementById("error");
+  return urlParams.get(param);
+};
 
-  // Завантаження даних із JSON-файлу для деталей
-  const loadProductDetails = async (id) => {
-    try {
-      const response = await fetch("detailsTest.json");
-      if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
-      const products = await response.json();
-      return products.find(product => product.id === id);
-    } catch (error) {
-      errorDiv.textContent = `Error loading product details: ${error.message}`;
-      console.error("Error loading details:", error);
-      return null;
-    }
-  };
+const productId = getQueryParam("id");
 
-  // Відображення деталей продукту
-  const renderProductDetails = (product) => {
-    if (!product) {
-      errorDiv.textContent = "Product not found.";
-      return;
-    }
+if (!productId) {
+  document.getElementById("product-details").innerHTML = "<p>Product ID not found in URL.</p>";
+} else {
+  fetch("detailsTest.json")
+    .then((response) => response.json())
+    .then((products) => {
+      const product = products.find((p) => p.id == productId);
 
-    const img = document.createElement("img");
-    img.src = product.image;
-    img.alt = product.name;
-    img.onerror = () => {
-      img.src = "placeholder.jpg";
-      img.alt = "Image unavailable";
-    };
-
-    const name = document.createElement("h1"); // Назва
-    name.textContent = product.name;
-
-    const description = document.createElement("p"); // Опис
-    description.textContent = `Description: ${product.description}`;
-
-    const price = document.createElement("p"); // Ціна
-    price.textContent = `Price: ${product.price}`;
-
-    const category = document.createElement("p"); // Категорія
-    category.textContent = `Category: ${product.category}`;
-
-    const additionalInfo = document.createElement("p"); // Додаткова інформація
-    additionalInfo.textContent = `Additional Info: ${product.additionalInfo}`;
-
-    detailsDiv.appendChild(img);
-    detailsDiv.appendChild(name);
-    detailsDiv.appendChild(category);
-    detailsDiv.appendChild(description);
-    detailsDiv.appendChild(price);
-    detailsDiv.appendChild(additionalInfo);
-  };
-
-  if (productId) {
-    const product = await loadProductDetails(productId);
-    renderProductDetails(product);
-  } else {
-    errorDiv.textContent = "Invalid product ID.";
-  }
-});
-
+      if (product) {
+        document.getElementById("product-details").innerHTML = `
+          <h1>${product.name}</h1>
+          <img src="${product.image}" alt="${product.name}">
+          <div class="details">
+          <p class="price">Price: ${product.price}</p>
+          <p>${product.description}</p>
+          <p>${product.description1}</p>
+          <p>${product.description2}</p>
+          <p>${product.description3}</p>
+          <p>${product.description4}</p>
+          <p>${product.description5}</p>
+          <p>${product.description6}</p>
+          <p>${product.description7}</p>
+          <p>${product.description8}</p>
+          <p>${product.description9}</p>
+          <p>${product.description10}</p>
+          <p>${product.description11}</p>
+          <p>${product.description12}</p>
+          <p>${product.description13}</p>
+          <p>${product.description14}</p>
+          <p>${product.description15}</p>
+          </div>
+        `;
+      } else {
+        document.getElementById("product-details").innerHTML = "<p>Product not found.</p>";
+      }
+    })
+    .catch((error) => console.error("Error loading product details:", error));
+}
 </script>
 </html>
