@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", async () => { // Гарантія що все завантажено
+document.addEventListener("DOMContentLoaded", async () => {
+  // Гарантія що все завантажено
   const searchInput = document.getElementById("searchInput");
   const contentDiv = document.getElementById("content");
   const errorDiv = document.getElementById("error");
@@ -16,13 +17,15 @@ document.addEventListener("DOMContentLoaded", async () => { // Гарантія 
     }
   };
 
-
-// Створення картки
+  // Створення картки
   const renderProducts = (products) => {
     contentDiv.innerHTML = "";
     products.forEach(product => {
       const card = document.createElement("div");
       card.className = "card";
+      card.addEventListener("click", () => {
+        window.location.href = `details.html?id=${product.id}`;
+      });
 
       const img = document.createElement("img");
       img.src = product.image;
@@ -41,7 +44,7 @@ document.addEventListener("DOMContentLoaded", async () => { // Гарантія 
 
       const price = document.createElement("div"); //Ціна
       price.className = "price";
-      price.textContent = `Ціна: ${product.price}`;
+      price.textContent = `Price: ${product.price}`;
 
       const category = document.createElement("div"); //Категорія
       category.className = "category";
@@ -50,7 +53,8 @@ document.addEventListener("DOMContentLoaded", async () => { // Гарантія 
       const addToCartButton = document.createElement("button"); // Кнопка додати в кошик
       addToCartButton.className = "add-to-cart";
       addToCartButton.textContent = "Add to Cart";
-      addToCartButton.addEventListener("click", () => {
+      addToCartButton.addEventListener("click", (event) => {
+        event.stopPropagation(); // Зупинити перехід при натисканні на кнопку
         alert(`${product.name} added to cart!`);
       });
 
@@ -65,9 +69,9 @@ document.addEventListener("DOMContentLoaded", async () => { // Гарантія 
     });
   };
 
-
-//Пошук
-  const filterProducts = (query, products) => {          //Функція фільтрації
+  // Пошук
+  const filterProducts = (query, products) => {
+    // Функція фільтрації
     const filteredProducts = products.filter(product => 
       product.name.toLowerCase().includes(query) || 
       product.category.toLowerCase().includes(query)
