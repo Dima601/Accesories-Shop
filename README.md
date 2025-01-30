@@ -1,2 +1,2 @@
 # Accesories-Shop
-accessoriesshop.netlify.com
+https://accesories.netlify.app/
